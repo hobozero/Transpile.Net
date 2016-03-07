@@ -22,7 +22,7 @@ Assign ITranspilable (or a self-defined type) to your C# models.  They'll be sca
 * **[#NAMESPACE]** - Where model's namespace will be inserted
 * **[#MODELNAME]** - Where the model's identifier will be inserted.
 * **[#MODEL]** - Where the model should be inserted
-* You can also define your own variables to be filled in later.
+* You can also define your own template variables.
 
 ### Default Values
 The System.ComponentModel.DefaultValueAttribute has been extended to properly initilize the property values of the resulting transpiled code.  From [MSDN](https://msdn.microsoft.com/en-us/library/system.componentmodel.defaultvalueattribute(v=vs.110).aspx)
