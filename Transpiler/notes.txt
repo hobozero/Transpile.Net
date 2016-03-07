@@ -1,0 +1,20 @@
+To create a new type of Transpiler
+
+1. Create a new 4.5.1 (or greater) class project, and reference the Transpiler assembly.
+2. Subclass the Transpilation.Transpilers.TranspilerBase abstract class.
+3. Either implement the empty ITranspilable interface in all of your C# model objects you wish to transpile.  You can choose your own parent type if desired.
+3. Create a folder to hold your templates.  This is typically named "templates", but you can use your own if desired.  
+Design your templates using the provided variable names and add your own if desired. 
+You can use the preferred naming convention, or add your own.:
+	TranspilerSubClassName.Master.ext and
+	TranspilerSubClassName.Model.ext
+	e.g.
+	ES5Transpiler.Master.js
+	
+Useful variables.
+[#GLOBAL_NAMESPACE] - Where the top-level namespace for all your compiled models will be inserted
+[#MODELS] - Where the models should be inserted
+[#NAMESPACE] - Where model's namespace will be inserted
+[#MODELNAME] - Where the model's identifier will be inserted.
+[#MODEL] - Where the model should be inserted
+	

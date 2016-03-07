@@ -1,0 +1,8 @@
+﻿{
+    "Framework": "jasmine",
+
+    "References": [
+        { "Path" : "./../Transpiled/jsmodel.js" }
+    ]
+
+}
