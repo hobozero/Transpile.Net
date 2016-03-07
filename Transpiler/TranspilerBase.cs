@@ -1,4 +1,3 @@
-﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,11 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Transpilation.Interfaces;
-using System.Web.Http;
-using Newtonsoft.Json.Serialization;
-using Transpilation.Exceptions;
 using Transpilation.ModelBuilders;
 using Transpilation.Scaffold;
 
