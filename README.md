@@ -1,9 +1,11 @@
 # Transpile .Net 
 Transpile POCOs into any language.
 
-![Model Transpilation](https://github.com/hobozero/Transpile.Net/blob/master/Transpile.png)
-
 The classic case is a JavaScript application that accesses .Net JSON endpoints and needs to keeps its view model definittions in sync.  Although libaries like Bridge.Net and [NetJs](https://github.com/praeclarum/Netjs) completely transpile C# to JavaScript and TypeScript, including the inner logic, Transpile .Net is a lightweight one-trick pony that let's you fully customize the output including choosing which classes are transpiled. You can also set default values for all you properties.
+
+Assign ITranspilable (or a self-defined type) to your C# models.  They'll be scaffolded to extract the structure and default values then used to fill in templates. The master template defines the resulting code page, and the model template defines how the models are produced inside the code page.
+
+![Model Transpilation](https://github.com/hobozero/Transpile.Net/blob/master/Transpile.png)
 
 ## To create a new Transpiler
 1.  Create a new 4.5.1 (or greater) class project, and reference the Transpiler assembly.
@@ -21,23 +23,6 @@ The classic case is a JavaScript application that accesses .Net JSON endpoints a
 * **[#MODELNAME]** - Where the model's identifier will be inserted.
 * **[#MODEL]** - Where the model should be inserted
 * You can also define your own variables to be filled in later.
-
-Much like ´ASP.Net´, ´Transpile.Net´ uses rules and templates to produce a string. The template...
-```js
-var myObject = /*[#keyName]*/;
-```
-...uses a C# **Dictionary<string, string>** ...
-```cs
-new Dictionary<string, string>()
-{
-        {"keyName", @"boop" },
-        {"someOtherKeyName", sbModels.ToString()}
-});
-```
-... and renders to ...
-```js
- var myObject = "boop";
-```
 
 ### Default Values
 The System.ComponentModel.DefaultValueAttribute has been extended to properly initilize the property values of the resulting transpiled code.  From [MSDN](https://msdn.microsoft.com/en-us/library/system.componentmodel.defaultvalueattribute(v=vs.110).aspx)
